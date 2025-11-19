@@ -149,7 +149,7 @@ btn.addEventListener("click", () => {
     more.classList.toggle("hidden");
 
     if (more.classList.contains("hidden")) {
-        btn.textContent = "View More";
+        btn.textContent = "Meet Our Team";
     } else {
         btn.textContent = "View Less";
     }
