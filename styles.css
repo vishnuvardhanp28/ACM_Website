@@ -854,10 +854,12 @@ select.form-input {
         justify-content: center;
     }
 }
+/* Hide elements */
 .hidden {
-    display: none;
+    display: none ;
 }
 
+/* View More button styling */
 .view-more-container {
     text-align: center;
     margin-top: 20px;
@@ -876,6 +878,21 @@ select.form-input {
 .view-more-btn:hover {
     background: #3535d4;
 }
+
+/* Team section top layout */
 .team-top {
     display: block;
+}
+
+/* Hidden images container - default hidden */
+.hidden-images {
+    display: none; 
+}
+
+/* When show class is added, display images in grid */
+.hidden-images.show {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }

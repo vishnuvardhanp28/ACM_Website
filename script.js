@@ -154,3 +154,15 @@ btn.addEventListener("click", () => {
         btn.textContent = "View Less";
     }
 });
+const viewMoreButton = document.getElementById("viewMoreButton");
+const hiddenImages = document.getElementById("hiddenImagesContainer");
+
+viewMoreButton.addEventListener("click", () => {
+    hiddenImages.classList.toggle("show");
+
+    if (hiddenImages.classList.contains("show")) {
+        viewMoreButton.textContent = "View Less";
+    } else {
+        viewMoreButton.textContent = "View More Images ";
+    }
+});
