@@ -467,42 +467,54 @@ section {
 /* ===== TEAM SECTION ===== */
 .team {
     background: white;
+    padding: var(--space-xl) 0;
 }
 
+/* Grid Layout */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-lg);
+    gap: var(--space-xl);
     margin-top: var(--space-2xl);
+    justify-items: center;
 }
 
+/* Team Card */
 .team-card {
     text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    background: var(--light);
+    border-radius: 1rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
 }
 
-.team-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    margin: 0 auto var(--space-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    color: white;
-    font-weight: 700;
+.team-card:hover {
+    transform: translateY(-6px);
     box-shadow: var(--shadow-lg);
 }
 
+/* Avatar */
+.team-avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    margin: 0 auto var(--space-md);
+    display: block;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Name */
 .team-name {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 600;
     margin-bottom: var(--space-xs);
     color: var(--dark);
 }
 
+/* Role */
 .team-role {
     color: var(--primary);
     font-weight: 600;
@@ -512,12 +524,15 @@ section {
     margin-bottom: var(--space-sm);
 }
 
+/* Bio */
 .team-bio {
     color: var(--gray);
-    font-size: 0.9375rem;
+    font-size: 0.95rem;
     margin-bottom: var(--space-md);
+    line-height: 1.4;
 }
 
+/* Social Icons */
 .team-social {
     display: flex;
     gap: var(--space-sm);
@@ -541,6 +556,15 @@ section {
     color: white;
     transform: translateY(-2px);
 }
+.leaders-header {
+    text-align: center;
+    max-width: 700px;
+    margin: var(--space-xl) auto var(--space-lg);
+}
+#topMembers.team-grid {
+    margin-top: var(--space-lg);
+}
+
 
 /* ===== GALLERY ===== */
 .gallery-grid {
@@ -596,21 +620,31 @@ section {
 .contact {
     background: var(--dark);
     color: white;
+    padding-bottom: var(--space-2xl);
 }
 
 .contact .section-badge {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
     color: var(--secondary);
+    backdrop-filter: blur(6px);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
 }
 
 .contact .section-title {
     color: white;
+    letter-spacing: 0.5px;
 }
 
 .contact .section-description {
     color: var(--gray-light);
+    max-width: 600px;
+    margin: auto;
+    line-height: 1.6;
 }
 
+/* GRID */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -618,72 +652,107 @@ section {
     margin-top: var(--space-2xl);
 }
 
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+}
+
+/* FORM */
 .contact-form {
-    background: var(--dark-light);
+    background: rgba(255, 255, 255, 0.05);
     padding: var(--space-xl);
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.contact-form:hover {
+    transform: translateY(-2px);
 }
 
 .form-group {
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
 }
 
 .form-label {
     display: block;
     margin-bottom: var(--space-xs);
     font-weight: 600;
-    color: white;
+    font-size: 0.95rem;
+    color: var(--gray-light);
 }
 
 .form-input {
     width: 100%;
-    padding: var(--space-md);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 16px;
+    background: #1b1f38; /* Slightly darker for contrast */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     color: white;
-    font-family: var(--font-body);
     font-size: 1rem;
-    transition: var(--transition);
+    transition: all 0.25s ease-in-out;
 }
 
 .form-input:focus {
     outline: none;
     border-color: var(--primary);
-    background: rgba(255, 255, 255, 0.08);
+    background: #22263f;
+    box-shadow: 0 0 8px rgba(76, 125, 229, 0.4);
 }
 
 .form-input::placeholder {
     color: var(--gray);
 }
 
+/* Optional: for smaller screen dropdown fix */
+select.form-input {
+    appearance: none;
+    cursor: pointer;
+}
+
+/* CONTACT INFO */
 .contact-info h3 {
-    font-family: var(--font-display);
     font-size: 1.5rem;
     margin-bottom: var(--space-md);
+    color: white;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    margin-bottom: var(--space-md);
     padding: var(--space-md);
-    background: var(--dark-light);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: 0.3s;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(3px);
 }
 
 .contact-icon {
     width: 48px;
     height: 48px;
     background: linear-gradient(135deg, var(--primary), var(--secondary));
-    border-radius: 12px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
+
+/* Button alignment fix for contact form */
+#contactForm .btn-primary {
+    margin-top: 10px;
+    width: 100%;
+}
+
 
 /* ===== FOOTER ===== */
 .footer {
@@ -784,4 +853,46 @@ section {
         width: 100%;
         justify-content: center;
     }
+}
+/* Hide elements */
+.hidden {
+    display: none ;
+}
+
+/* View More button styling */
+.view-more-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.view-more-btn {
+    padding: 10px 20px;
+    background: #4a4aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.view-more-btn:hover {
+    background: #3535d4;
+}
+
+/* Team section top layout */
+.team-top {
+    display: block;
+}
+
+/* Hidden images container - default hidden */
+.hidden-images {
+    display: none; 
+}
+
+/* When show class is added, display images in grid */
+.hidden-images.show {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }

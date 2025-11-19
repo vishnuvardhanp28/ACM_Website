@@ -142,3 +142,27 @@ window.addEventListener('load', () => {
 });
 
 console.log('🚀 ACM Website loaded successfully!');
+const btn = document.getElementById("viewMoreBtn");
+const more = document.getElementById("moreMembers");
+
+btn.addEventListener("click", () => {
+    more.classList.toggle("hidden");
+
+    if (more.classList.contains("hidden")) {
+        btn.textContent = "View More";
+    } else {
+        btn.textContent = "View Less";
+    }
+});
+const viewMoreButton = document.getElementById("viewMoreButton");
+const hiddenImages = document.getElementById("hiddenImagesContainer");
+
+viewMoreButton.addEventListener("click", () => {
+    hiddenImages.classList.toggle("show");
+
+    if (hiddenImages.classList.contains("show")) {
+        viewMoreButton.textContent = "View Less";
+    } else {
+        viewMoreButton.textContent = "View More Images ";
+    }
+});
