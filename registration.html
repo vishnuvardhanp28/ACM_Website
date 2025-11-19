@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - ROCS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .registration-container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            width: 400px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .registration-form input,
+        .registration-form select,
+        .registration-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #0066ff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #004ecb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="registration-container">
+        <h2>ROCS Event Registration</h2>
+        <p>Fill in your details to confirm participation</p>
+
+        <form class="registration-form" action="#" method="POST">
+            
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter your full name" required>
+
+            <label>Registration Number</label>
+            <input type="text" name="regno" placeholder="e.g. APXXXXXXXXXXX" required>
+
+            <label>Email</label>
+            <input type="email" name="email" placeholder="example@srmap.edu.in" required>
+
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="Enter your contact number" required>
+
+           <label>Department</label>
+            <input type="text" name="department" placeholder="Enter your department" required>
+
+            <label>Year of Study</label>
+            <select name="year" required>
+                <option disabled selected>Select year</option>
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option>3rd Year</option>
+                <option>4th Year</option>
+            </select>
+
+
+            <button type="submit" class="btn-submit">Submit Registration</button>
+        </form>
+    </div>
+
+</body>
+</html>
